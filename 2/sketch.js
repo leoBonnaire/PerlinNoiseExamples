@@ -5,7 +5,7 @@ function setup() {
 }
 
 function draw() {
-	
+
 	background(51);
 
 	let xoff = start;
@@ -16,26 +16,28 @@ function draw() {
 	noFill();
 	beginShape();
 	strokeWeight(3);
+  stroke(255, 0, 0);
 	for(let x = 0; x < width; x++){
 		let y = (map(noise(xoff), 0, 1, -1, 1) * 100 + map(sin(xoff), -1, 1, 0, height)) / 2 + height/4;
 		vertex(x, y);
 		xoff += 0.005;
 	}
 	endShape();
-	
+
 	// Normal sinus
 	xoff = start;
 	noFill();
 	beginShape();
 	strokeWeight(2);
+  stroke(0, 0, 255);
 	for(let x = 0; x < width; x++){
 		let y = (map(sin(xoff), -1, 1, 0, height)) / 2 + height/4;
 		vertex(x, y);
 		xoff += 0.005;
 	}
 	endShape();
-	
-	
+
+
 	start += 0.01;
 }
 
